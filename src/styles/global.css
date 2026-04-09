@@ -1,0 +1,176 @@
+:root {
+    --hue: 200;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+
+}
+html, body {
+    background: black;
+    width: 100%;
+    min-height: 100vh;
+}
+body {
+    
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: radial-gradient(circle at 0% 10%,hsla(var(--hue), 80%, 15%, 1),hsla(var(--hue), 80%, 0%, 0) 35%), radial-gradient(circle at 100%,hsla(var(--hue), 80%, 15%, 1),hsla(var(--hue), 80%, 0%, 0) 35%), radial-gradient(circle at 30% 100%,hsla(var(--hue), 80%, 15%, 1),hsla(var(--hue), 80%, 0%, 0) 35%);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: hsl(var(--hue), 100%, 75%);
+}
+
+
+
+
+
+
+
+
+
+
+.card {
+  background: hsla(var(--hue), 50%, 50%, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  transition: background 0.1s;
+  border-radius: 2px;
+  padding: 16px;
+
+}
+
+.card:hover {
+  --active: 1;
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(var(--hue) 100% 50% / 0.2), transparent 200px);
+  background-attachment: fixed;
+  opacity: var(--active, 0);
+  transition: opacity 0.2s;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(var(--hue) 0% 100% / 0.5), transparent 400px),
+    transparent;
+  background-attachment: fixed;
+  opacity: var(--active, 0);
+  pointer-events: none;
+  mask:
+    linear-gradient(white, white) 50% 0 / 100% 1px no-repeat,
+    linear-gradient(white, white) 50% 100% / 100% 1px no-repeat,
+    linear-gradient(white, white) 0 50% / 1px 100% no-repeat,
+    linear-gradient(white, white) 100% 50% / 1px 100% no-repeat;
+  border-radius: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  /* Base Layout */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+	font-family: system-ui, sans-serif;
+  }
+
+  /* Typography & Elements */
+
+
+  h1 em {
+    font-style: normal;
+    color: hsl(var(--hue), 100%, 75%);
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    margin-bottom: 32px;
+  }
+
+  /* Components */
+  .badge {
+    background: hsla(var(--hue), 50%, 50%, 0.5);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .skill-tag {
+    color: white;
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-tag:hover {
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+ 
+
+  .contact {
+    color: white;
+    text-align: center;
+  }
+
+  .cta {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 16px 32px;
+    border-radius: 99px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 24px 8px;
+  }

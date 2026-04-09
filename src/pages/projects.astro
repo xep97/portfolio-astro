@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skills = ["HTML", "CSS", "Javascript"];
+const second_skills = ["PHP", "Typescript", "Node.js", "Express.js", "React", "Next.js", "Vite", "Astro", "Swift", "Websockets", "Socket.io", "Python", "SQL", "Github", "Vercel", "Render", "Supabase"];
+const projects = [
+  { title: "Project Alpha", desc: "A sleek SaaS landing page.", link: "#" },
+  { title: "Project Beta", desc: "Real-time dashboard with WebSockets.", link: "#" },
+];
+---
+
+<Layout title="Portfolio">
+  <main class="container">
+    
+    <section class="hero">
+      <span class="badge">Available for work</span>
+      <h1>Hallo <em>Verden</em></h1>
+      <p class="subtitle">I make websites.</p>
+    </section>
+
+    <section class="skills">
+      <h2 class="section-label">Har jobbet mye med</h2>
+      <div class="skill-grid">
+        {skills.map(skill => <span class="skill-tag">{skill}</span>)}
+      </div>
+	  <h2 class="section-label">Har jobbet litt med</h2>
+      <div class="skill-grid">
+        {second_skills.map(second_skill => <span class="skill-tag">{second_skill}</span>)}
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2 class="section-label">Selected Work</h2>
+      <div class="project-grid">
+        {projects.map(project => (
+          <a href={project.link} class="project-card">
+            <h3>{project.title}</h3>
+            <p>{project.desc}</p>
+            <span class="link-text">View Project →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Let's work together</h2>
+      <a href="mailto:hello@example.com" class="cta">Say Hello</a>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  /* Base Layout */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+	font-family: system-ui, sans-serif;
+  }
+
+  /* Typography & Elements */
+
+
+  h1 em {
+    font-style: normal;
+    color: #6fff00;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    margin-bottom: 32px;
+  }
+
+  /* Components */
+  .badge {
+    background: #eef2ff;
+    color: #6fff00;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .skill-tag {
+    background: #6fff0088;
+    border: 1px solid #e2e8f0;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-tag:hover {
+    border-color: #6fff00;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .project-card {
+    text-decoration: none;
+    color: inherit;
+    padding: 32px;
+    background: #6fff0088;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+  }
+
+  .contact {
+    background: #6fff0088;
+    color: white;
+    padding: 64px;
+    border-radius: 32px;
+    text-align: center;
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 24px;
+    background: white;
+    color: black;
+    padding: 16px 32px;
+    border-radius: 99px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+</style>

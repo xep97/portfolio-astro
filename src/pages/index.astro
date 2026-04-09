@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skills = ["HTML", "CSS", "Javascript"];
+const second_skills = ["PHP", "Typescript", "Node.js", "Express.js", "React", "Next.js", "Vite", "Astro", "Swift", "Websockets", "Socket.io", "Python", "SQL", "Github", "Vercel", "Render", "Supabase"];
+const projects = [
+  { title: "Yztay", desc: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/" },
+  { title: "Quick Math", desc: "A math game.", link: "https://math-game-lac-six.vercel.app/" },
+  { title: "Reminders", desc: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/" },
+  { title: "TimePost", desc: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/" },
+  { title: "CatFacts 1999", desc: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/" },
+  { title: "Next js cat news demo", desc: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/" },
+
+];
+---
+
+<Layout title="Portfolio">
+  <main class="container">
+    
+    <section class="hero">
+      <span class="badge">Available for work</span>
+      <h1>Hei <em>verden</em></h1>
+      <h3>Mitt navn er Egil og jeg lager nettsider.</h3>
+	  <h3>Jeg er 28 år og bor på Sunnmøre i Norge</h3>
+    </section>
+
+    <section class="skills">
+      <h2 class="section-label">Har jobbet mye med</h2>
+      <div class="skill-grid">
+        {skills.map(skill => <span class="card skill-tag">{skill}</span>)}
+      </div>
+	</section>
+
+    <section class="skills">
+	  <h2 class="section-label">Har jobbet litt med</h2>
+      <div class="skill-grid">
+        {second_skills.map(second_skill => <span class="card skill-tag">{second_skill}</span>)}
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2 class="section-label">Prosjekter</h2>
+      <div class="project-grid">
+        {projects.map(project => (
+          <a href={project.link} class="card">
+            <h3>{project.title}</h3>
+            <p>{project.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Kontakt meg</h2>
+      <a href="mailto:egil97.dev@gmail.com" class="cta">Send meg en mail</a>
+      <a href="https://github.com/xep97" class="cta">Github</a>
+    </section>
+
+  </main>
+</Layout>

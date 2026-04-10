@@ -54,7 +54,7 @@ const projects = [
     </section>
 
     <section class="projects">
-		<h2 class="section-label">{translations.no.labelProjects}</h2>
+		<h2 class="section-label" data-key="labelProjects">{translations.no.labelProjects}</h2>
 		<div class="project-grid">
 			{projects.map(project => (
 				<a href={project.link} class="card project-card" data-tags={project.tags?.join(',')}>
@@ -70,12 +70,12 @@ const projects = [
 	</section>
 
     <section id="contact" class="contact">
-      <h2>{translations.no.contactTitle}</h2>
-	  <p>Feel free to contact me by using the form below or by sending an email to <a href="mailto:egil97.dev@gmail.com">egil97.dev@gmail.com</a></p>
+      <h2 class="section-label" data-key="contactTitle">{translations.no.contactTitle}</h2>
+	  <p><span data-key="contactText">{translations.no.contactText} </span><a href="mailto:egil97.dev@gmail.com">egil97.dev@gmail.com</a></p>
 	  <div>
 		<Contact />
 	  </div>
-	  <p>You can also find me here</p>
+	  <h2 class="section-label" data-key="findAlso">{translations.no.findAlso}</h2>
 	  <div>
 		<a href="https://github.com/xep97" class="cta">Github</a>
       	<a href="#comingsoon" class="cta">LinkedIn</a>

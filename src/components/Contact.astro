@@ -16,7 +16,7 @@ import translations from '../data/languages.json'; // Import data
   
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="">
-    <label for="full_name">Name</label>
+    <label for="full_name" data-key="fullName">{translations.no.fullName}</label>
     <input
       id="full_name"
       type="text"
@@ -29,7 +29,7 @@ import translations from '../data/languages.json'; // Import data
     </div>
   </div>
   <div class="">
-    <label for="email_address" class="sr-only">Email Address</label>
+    <label for="email_address" class="" data-key="emailAddress">{translations.no.emailAddress}</label>
     <input
       id="email_address"
       type="email"
@@ -45,7 +45,7 @@ import translations from '../data/languages.json'; // Import data
     </div>
   </div>
   <div class="">
-    <label for="message">Your message</label>
+    <label for="message" data-key="yourMessage">{translations.no.yourMessage}</label>
     <textarea
       id="message"
       name="message"

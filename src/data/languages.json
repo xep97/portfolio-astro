@@ -10,8 +10,14 @@
     "labelLittle": "Har også erfaring med",
     "labelProjects": "Prosjekter",
     "contactTitle": "Kontakt meg",
+    "contactText": "Du kan kontakte meg med kontaktskjemaet under, eller så kan du sende en epost til ",
+    "fullName": "Navn",
+    "emailAddress": "Epost",
+    "yourMessage": "Skriv meldingen her",
     "sendMessage": "Send Melding",
-    "badge": "Tilgjengelig for arbeid"
+    "findAlso": "Du finner meg også her",
+    "badge": "Tilgjengelig for arbeid",
+    "footerText": "Copyright Egil 2026 - Takk for at du besøkte nettsiden min!"
   },
   "en": {
     "heroTitle": "Hello",
@@ -24,7 +30,13 @@
     "labelLittle": "Familiar with",
     "labelProjects": "Projects",
     "contactTitle": "Contact me",
+    "contactText": "Feel free to contact me by using the form below or by sending an email to ",
+    "fullName": "Name",
+    "emailAddress": "Email",
+    "yourMessage": "Your message",
     "sendMessage": "Send Message",
-    "badge": "Available for work"
+    "findAlso": "You can also find me here",
+    "badge": "Available for work",
+    "footerText": "Copyright Egil 2026 - Thanks for visiting my website!"
   }
 }

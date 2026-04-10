@@ -14,9 +14,10 @@ html, body {
     width: 100%;
     min-height: 100vh;
     scroll-behavior: smooth;
+    color: white;
 }
 body {
-    
+    font-family: system-ui, sans-serif;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -105,7 +106,6 @@ a {
     display: flex;
     flex-direction: column;
     gap: 120px;
-	font-family: system-ui, sans-serif;
   }
 
   /* Typography & Elements */
@@ -217,4 +217,11 @@ a {
     font-weight: 600;
     text-decoration: none;
     margin: 24px 8px;
+  }
+
+
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
   }

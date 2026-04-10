@@ -1,5 +1,8 @@
+---
+import translations from '../data/languages.json'; // Import data
 
-<!-- // Styling Requires Tailwind CSS -->
+---
+
 <form
   action="https://api.web3forms.com/submit"
   method="POST"
@@ -53,7 +56,7 @@
       Please enter your message.
     </div>
   </div>
-  <button type="submit" class="cta"></button>
+  <button type="submit" class="cta" data-key="sendMessage">{translations.no.sendMessage}</button>
   <div id="result" class=""></div>
 </form>
 

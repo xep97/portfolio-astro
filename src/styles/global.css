@@ -206,6 +206,9 @@ a {
   .contact {
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .cta {
@@ -218,6 +221,26 @@ a {
     text-decoration: none;
     margin: 24px 8px;
   }
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 12px;
+}
+input[type=text], input[type=email], textarea {
+    padding: 12px;
+    margin: 6px;
+    border-radius: 2px;
+    width: 100%;
+
+}
+
+
+
+
+
 
 
   footer {
@@ -248,3 +271,5 @@ a {
   color: #fff;
   border-color: #000;
 }
+
+

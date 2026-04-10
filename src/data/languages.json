@@ -1,0 +1,30 @@
+{
+  "no": {
+    "heroTitle": "Hei",
+    "heroEm": "verden",
+    "heroSub1": "Mitt navn er Egil og jeg lager nettsider",
+    "heroSub2": "Jeg er 28 år og bor på Sunnmøre i Norge",
+    "heroSub3": "Jeg har laget nettsider just for fun på fritiden i 15 år",
+    "heroCta": "Ta gjerne kontakt",
+    "labelMuch": "Har jobbet mye med",
+    "labelLittle": "Har også erfaring med",
+    "labelProjects": "Prosjekter",
+    "contactTitle": "Kontakt meg",
+    "sendMessage": "Send Melding",
+    "badge": "Tilgjengelig for arbeid"
+  },
+  "en": {
+    "heroTitle": "Hello",
+    "heroEm": "World",
+    "heroSub1": "My name is Egil and I make websites",
+    "heroSub2": "I am 28 years old and live in Sunnmøre, Norway",
+    "heroSub3": "I've been building websites for fun in my spare time for 15 years",
+    "heroCta": "Get in touch",
+    "labelMuch": "Experienced with",
+    "labelLittle": "Familiar with",
+    "labelProjects": "Projects",
+    "contactTitle": "Contact me",
+    "sendMessage": "Send Message",
+    "badge": "Available for work"
+  }
+}

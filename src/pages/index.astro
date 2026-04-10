@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Contact from '../components/Contact.astro';
+import LangSwitcher from '../components/LangSwitcher.astro'; // Import here
+import translations from '../data/languages.json'; // Import data
+
+const t = translations.no; // Default to NO for SSR
+
 //import { FaArrowDown } from "react-icons/fa";
 
 
@@ -15,50 +21,10 @@ const projects = [
 
 ];
 
-
-// ... your existing imports
-
-const translations = {
-  no: {
-    heroTitle: "Hei",
-    heroEm: "verden",
-    heroSub1: "Mitt navn er Egil og jeg lager nettsider",
-    heroSub2: "Jeg er 28 år og bor på Sunnmøre i Norge",
-    heroSub3: "Jeg har laget nettsider just for fun på fritiden i 15 år",
-    heroCta: "Ta gjerne kontakt",
-    labelMuch: "Har jobbet mye med",
-    labelLittle: "Har jobbet litt med",
-    labelProjects: "Prosjekter",
-    contactTitle: "Kontakt meg",
-    contactCta: "Send meg en mail",
-    badge: "Tilgjengelig for arbeid"
-  },
-  en: {
-    heroTitle: "Hello",
-    heroEm: "world",
-    heroSub1: "My name is Egil and I build websites",
-    heroSub2: "I am 28 years old and live in Sunnmøre, Norway",
-    heroSub3: "I've been building websites for fun in my spare time for 15 years",
-    heroCta: "Get in touch",
-    labelMuch: "Experienced with",
-    labelLittle: "Familiar with",
-    labelProjects: "Projects",
-    contactTitle: "Contact me",
-    contactCta: "Send me an email",
-    badge: "Available for work"
-  }
-};
-
-// ... your skills and projects arrays
-
-
 ---
 
 <Layout title="Portfolio">
-	<div class="lang-switcher">
-    	<button data-lang="no" class="lang-btn active">NO</button>
-    	<button data-lang="en" class="lang-btn">EN</button>
-  	</div>
+	<LangSwitcher />
   <main class="container">
     
     <section class="hero">
@@ -88,7 +54,7 @@ const translations = {
     </section>
 
     <section class="projects">
-		<h2 class="section-label">Prosjekter</h2>
+		<h2 class="section-label">{translations.no.labelProjects}</h2>
 		<div class="project-grid">
 			{projects.map(project => (
 				<a href={project.link} class="card project-card" data-tags={project.tags?.join(',')}>
@@ -104,9 +70,16 @@ const translations = {
 	</section>
 
     <section id="contact" class="contact">
-      <h2>Kontakt meg</h2>
-      <a href="mailto:egil97.dev@gmail.com" class="cta">Send meg en mail</a>
-      <a href="https://github.com/xep97" class="cta">Github</a>
+      <h2>{translations.no.contactTitle}</h2>
+	  <p>Feel free to contact me by using the form below or by sending an email to <a href="mailto:egil97.dev@gmail.com">egil97.dev@gmail.com</a></p>
+	  <div>
+		<Contact />
+	  </div>
+	  <p>You can also find me here</p>
+	  <div>
+		<a href="https://github.com/xep97" class="cta">Github</a>
+      	<a href="#comingsoon" class="cta">LinkedIn</a>
+	  </div>
     </section>
 
   </main>
@@ -140,61 +113,4 @@ const translations = {
     });
   });
 
-
-  
-</script>
-
-<script>
-  // ... your existing skill filter code ...
-
-  // Language Logic
- const translations = {
-	no: {
-		heroTitle: "Hei",
-		heroEm: "verden",
-		heroSub1: "Mitt navn er Egil og jeg lager nettsider",
-		heroSub2: "Jeg er 28 år og bor på Sunnmøre i Norge",
-		heroSub3: "Jeg har laget nettsider just for fun på fritiden i 15 år",
-		heroCta: "Ta gjerne kontakt",
-		labelMuch: "Har jobbet mye med",
-		labelLittle: "Har også erfaring med",
-		labelProjects: "Prosjekter",
-		contactTitle: "Kontakt meg",
-		contactCta: "Send meg en mail",
-		badge: "Tilgjengelig for arbeid"
-	},
-	en: {
-		heroTitle: "Hello",
-		heroEm: "World",
-		heroSub1: "My name is Egil and I make websites",
-		heroSub2: "I am 28 years old and live in Sunnmøre, Norway",
-		heroSub3: "I've been building websites for fun in my spare time for 15 years",
-		heroCta: "Get in touch",
-		labelMuch: "Experienced with",
-		labelLittle: "Familiar with",
-		labelProjects: "Projects",
-		contactTitle: "Contact me",
-		contactCta: "Send me an email",
-		badge: "Available for work"
-	}
-	};
-
-  const langButtons = document.querySelectorAll('.lang-btn');
-  const translatableElements = document.querySelectorAll('[data-key]');
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.getAttribute('data-lang');
-      
-      // Update buttons UI
-      langButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Update text
-      translatableElements.forEach(el => {
-        const key = el.getAttribute('data-key');
-        el.textContent = translations[lang][key];
-      });
-    });
-  });
 </script>

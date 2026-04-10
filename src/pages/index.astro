@@ -4,12 +4,12 @@ import Layout from '../layouts/Layout.astro';
 const skills = ["HTML", "CSS", "Javascript"];
 const second_skills = ["PHP", "Typescript", "Node.js", "Express.js", "React", "Next.js", "Vite", "Astro", "Swift", "Websockets", "Socket.io", "Python", "SQL", "Github", "Vercel", "Render", "Supabase"];
 const projects = [
-  { title: "Yztay", desc: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/" },
-  { title: "Quick Math", desc: "A math game.", link: "https://math-game-lac-six.vercel.app/" },
-  { title: "Reminders", desc: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/" },
-  { title: "TimePost", desc: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/" },
-  { title: "CatFacts 1999", desc: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/" },
-  { title: "Next js cat news demo", desc: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/" },
+  { title: "Yztay", desc: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/", tags: ["HTML", "Javascript", "CSS", "Websockets", "Socket.io", "Render"] },
+  { title: "Quick Math", desc: "A math game.", link: "https://math-game-lac-six.vercel.app/", tags: ["HTML", "Javascript", "Next.js", "Typescript", "CSS", "Vercel"] },
+  { title: "Reminders", desc: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/", tags: ["HTML", "Javascript", "CSS", "Vite", "Vercel"] },
+  { title: "TimePost", desc: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/", tags: ["HTML", "Javascript", "CSS", "Next.js", "Supabase", "Vercel"] },
+  { title: "CatFacts 1999", desc: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/", tags: ["HTML", "Javascript", "CSS", "Next.js", "Vercel"] },
+  { title: "Next js cat news demo", desc: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/", tags: ["HTML", "Javascript", "Next.js", "CSS", "Vercel"] },
 
 ];
 ---
@@ -22,6 +22,7 @@ const projects = [
       <h1>Hei <em>verden</em></h1>
       <h3>Mitt navn er Egil og jeg lager nettsider.</h3>
 	  <h3>Jeg er 28 år og bor på Sunnmøre i Norge</h3>
+	  <a class="cta" href="#contact">Ta gjerne kontakt v</a>
     </section>
 
     <section class="skills">
@@ -39,18 +40,22 @@ const projects = [
     </section>
 
     <section class="projects">
-      <h2 class="section-label">Prosjekter</h2>
-      <div class="project-grid">
-        {projects.map(project => (
-          <a href={project.link} class="card">
-            <h3>{project.title}</h3>
-            <p>{project.desc}</p>
-          </a>
-        ))}
-      </div>
-    </section>
+		<h2 class="section-label">Prosjekter</h2>
+		<div class="project-grid">
+			{projects.map(project => (
+				<a href={project.link} class="card project-card" data-tags={project.tags?.join(',')}>
+				<h3>{project.title}</h3>
+				<p>{project.desc}</p>
+				
+				<div class="project-tags-inline">
+					{project.tags?.map(tag => <small class="mini-tag">{tag}</small>)}
+				</div>
+				</a>
+			))}
+		</div>
+	</section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Kontakt meg</h2>
       <a href="mailto:egil97.dev@gmail.com" class="cta">Send meg en mail</a>
       <a href="https://github.com/xep97" class="cta">Github</a>
@@ -58,3 +63,32 @@ const projects = [
 
   </main>
 </Layout>
+
+
+<script>
+  const buttons = document.querySelectorAll('.skill-tag');
+  const projects = document.querySelectorAll('.project-card');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selectedSkill = button.textContent.trim();
+      const isAlreadyActive = button.classList.contains('active-filter');
+
+      // 1. Reset all buttons and show all projects first
+      buttons.forEach(btn => btn.classList.remove('active-filter'));
+      projects.forEach(proj => (proj as HTMLElement).style.display = 'flex');
+
+      // 2. If it wasn't already active, apply the filter
+      if (!isAlreadyActive) {
+        button.classList.add('active-filter');
+        
+        projects.forEach(project => {
+          const projectTags = project.getAttribute('data-tags') || "";
+          if (!projectTags.split(',').includes(selectedSkill)) {
+            (project as HTMLElement).style.display = 'none';
+          }
+        });
+      }
+    });
+  });
+</script>

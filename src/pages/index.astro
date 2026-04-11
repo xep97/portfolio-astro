@@ -14,18 +14,18 @@ const t = translations.no; // Default to NO for SSR
 //import { FaArrowDown } from "react-icons/fa";
 
 
-const skills = ["HTML", "CSS", "Javascript"];
-const second_skills = ["PHP", "Typescript", "Node.js", "Express.js", "React", "Next.js", "Vite", "Astro", "Swift", "Websockets", "Socket.io", "Python", "SQL", "Github", "Vercel", "Render", "Supabase"];
+const skills = ["CSS", "HTML", "Javascript"];
+const second_skills = ["Astro", "Express.js", "Github", "Next.js", "Node.js", "PHP", "Python", "React", "Render", "Socket.io", "SQL", "Supabase", "Swift", "Typescript", "Vercel", "Vite", "Websockets"];
 const projects = [
-  { title: "Yztay", desc: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/", github: "https://github.com/xep97/yztay", tags: ["HTML", "Javascript", "CSS", "Websockets", "Socket.io", "Render"] },
-  { title: "Quick Math", desc: "A math game.", link: "https://math-game-lac-six.vercel.app/", github: "https://github.com/xep97/math-game", tags: ["HTML", "Javascript", "Next.js", "Typescript", "CSS", "Vercel"] },
-  { title: "Reminders", desc: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/", github: "https://github.com/xep97/reminders", tags: ["HTML", "Javascript", "CSS", "Vite", "Vercel"] },
-  { title: "TimePost", desc: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/", github: "https://github.com/xep97/post-thing", tags: ["HTML", "Javascript", "CSS", "Next.js", "Supabase", "Vercel"] },
-  { title: "CatFacts 1999", desc: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/", github: "https://github.com/xep97/cat", tags: ["HTML", "Javascript", "CSS", "Next.js", "Vercel"] },
-  { title: "Next js cat news demo", desc: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/", github: "https://github.com/xep97/news", tags: ["HTML", "Javascript", "Next.js", "CSS", "Vercel"] },
+  { title: "Yztay", descNO: "Et litt annerledes yatzy spill.", descEN: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/", github: "https://github.com/xep97/yztay", tags: ["HTML", "Javascript", "CSS", "Node.js", "Express.js", "Websockets", "Socket.io", "Github", "Render"] },
+  { title: "Chat", descNO: "Skriv meldinger til folk.", descEN: "Real time chat app.", link: "https://chat-k3nr.onrender.com", github: "https://github.com/xep97/chat", tags: ["HTML", "Javascript", "CSS", "Node.js", "Express.js", "Websockets", "Socket.io", "Github", "Render"] },
+  { title: "Quick Math", descNO: "Et matematikk-spill.", descEN: "A math game.", link: "https://math-game-lac-six.vercel.app/", github: "https://github.com/xep97/math-game", tags: ["HTML", "Javascript", "React", "Next.js", "Typescript", "CSS", "Node.js", "Github", "Vercel"] },
+  { title: "Reminders", descNO: "Legg inn påminnelser og få varsel.", descEN: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/", github: "https://github.com/xep97/reminders", tags: ["HTML", "Javascript", "CSS", "React", "Vite", "Node.js", "Github", "Vercel"] },
+  { title: "TimePost", descNO: "Post ting og bestem når de skal være tilgjengelige å se.", descEN: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/", github: "https://github.com/xep97/post-thing", tags: ["HTML", "Javascript", "CSS", "React", "Next.js", "Node.js", "Github", "Supabase", "Vercel", "SQL", "Supabase"] },
+  { title: "CatFacts 1999", descNO: "Få fakta om katter som om året var 1999.", descEN: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/", github: "https://github.com/xep97/cat", tags: ["HTML", "Javascript", "CSS", "React", "Next.js", "Node.js", "Github", "Vercel"] },
+  { title: "Next js cat news demo", descNO: "Katte-demo nyhetsside laget i Next js.", descEN: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/", github: "https://github.com/xep97/news", tags: ["HTML", "Javascript", "CSS", "React", "Next.js", "Node.js", "Github", "Vercel"] },
 
 ];
-
 ---
 
 <Layout title="Portfolio">
@@ -66,7 +66,7 @@ const projects = [
         <div class="project-wrapper" data-tags={project.tags?.join(',')}>
           <a href={project.link} target="_blank" class="card project-card">
             <h3>{project.title}</h3>
-            <p>{project.desc}</p>
+            <p>{project.descNO}</p>
             
             <div class="project-tags-inline">
               {project.tags?.map(tag => <small class="mini-tag">{tag}</small>)}

@@ -57,7 +57,7 @@ const projects = [
 		<h2 class="section-label" data-key="labelProjects">{translations.no.labelProjects}</h2>
 		<div class="project-grid">
 			{projects.map(project => (
-				<a href={project.link} class="card project-card" data-tags={project.tags?.join(',')}>
+				<a href={project.link} target="_blank" class="card project-card" data-tags={project.tags?.join(',')}>
 				<h3>{project.title}</h3>
 				<p>{project.desc}</p>
 				

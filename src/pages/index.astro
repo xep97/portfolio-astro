@@ -4,6 +4,10 @@ import Contact from '../components/Contact.astro';
 import LangSwitcher from '../components/LangSwitcher.astro'; // Import here
 import translations from '../data/languages.json'; // Import data
 
+
+import { FaRocket, FaArrowDown, FaGithub } from "react-icons/fa";
+
+
 const t = translations.no; // Default to NO for SSR
 
 //import { FaArrowDown } from "react-icons/fa";
@@ -12,12 +16,12 @@ const t = translations.no; // Default to NO for SSR
 const skills = ["HTML", "CSS", "Javascript"];
 const second_skills = ["PHP", "Typescript", "Node.js", "Express.js", "React", "Next.js", "Vite", "Astro", "Swift", "Websockets", "Socket.io", "Python", "SQL", "Github", "Vercel", "Render", "Supabase"];
 const projects = [
-  { title: "Yztay", desc: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/", tags: ["HTML", "Javascript", "CSS", "Websockets", "Socket.io", "Render"] },
-  { title: "Quick Math", desc: "A math game.", link: "https://math-game-lac-six.vercel.app/", tags: ["HTML", "Javascript", "Next.js", "Typescript", "CSS", "Vercel"] },
-  { title: "Reminders", desc: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/", tags: ["HTML", "Javascript", "CSS", "Vite", "Vercel"] },
-  { title: "TimePost", desc: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/", tags: ["HTML", "Javascript", "CSS", "Next.js", "Supabase", "Vercel"] },
-  { title: "CatFacts 1999", desc: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/", tags: ["HTML", "Javascript", "CSS", "Next.js", "Vercel"] },
-  { title: "Next js cat news demo", desc: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/", tags: ["HTML", "Javascript", "Next.js", "CSS", "Vercel"] },
+  { title: "Yztay", desc: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/", github: "https://github.com/xep97/yztay", tags: ["HTML", "Javascript", "CSS", "Websockets", "Socket.io", "Render"] },
+  { title: "Quick Math", desc: "A math game.", link: "https://math-game-lac-six.vercel.app/", github: "https://github.com/xep97/math-game", tags: ["HTML", "Javascript", "Next.js", "Typescript", "CSS", "Vercel"] },
+  { title: "Reminders", desc: "Set a reminder and get notified.", link: "https://reminders-liart.vercel.app/", github: "https://github.com/xep97/reminders", tags: ["HTML", "Javascript", "CSS", "Vite", "Vercel"] },
+  { title: "TimePost", desc: "Post something and decide when it should be visible to the world.", link: "https://post-thing.vercel.app/", github: "https://github.com/xep97/post-thing", tags: ["HTML", "Javascript", "CSS", "Next.js", "Supabase", "Vercel"] },
+  { title: "CatFacts 1999", desc: "Get a random cat fact like it's they year 1999.", link: "https://cat-nine-kohl.vercel.app/", github: "https://github.com/xep97/cat", tags: ["HTML", "Javascript", "CSS", "Next.js", "Vercel"] },
+  { title: "Next js cat news demo", desc: "A demo for a cat news site made in Next js.", link: "https://news-chi-two-59.vercel.app/", github: "https://github.com/xep97/news", tags: ["HTML", "Javascript", "Next.js", "CSS", "Vercel"] },
 
 ];
 
@@ -32,19 +36,20 @@ const projects = [
       <h1>
         <span data-key="heroTitle">{translations.no.heroTitle}</span> 
         <em data-key="heroEm">{translations.no.heroEm}</em>
+        <FaRocket color="white" size="50px" />
       </h1>
       <h3 data-key="heroSub1">{translations.no.heroSub1}</h3>
       <h3 data-key="heroSub2">{translations.no.heroSub2}</h3>
       <h3 data-key="heroSub3">{translations.no.heroSub3}</h3>
-      <a class="cta" href="#contact" data-key="heroCta">{translations.no.heroCta}</a>
+      <a class="cta" href="#contact"><span data-key="heroCta">{translations.no.heroCta}</span><FaArrowDown color="black"/></a>
     </section>
 
     <section class="skills">
-		<h2 class="section-label" data-key="labelMuch">{translations.no.labelMuch}</h2>
+		  <h2 class="section-label" data-key="labelMuch">{translations.no.labelMuch}</h2>
       	<div class="skill-grid">
         	{skills.map(skill => <span class="card skill-tag">{skill}</span>)}
       	</div>
-	</section>
+	  </section>
 
     <section class="skills">
 		<h2 class="section-label" data-key="labelLittle">{translations.no.labelLittle}</h2>
@@ -57,14 +62,18 @@ const projects = [
 		<h2 class="section-label" data-key="labelProjects">{translations.no.labelProjects}</h2>
 		<div class="project-grid">
 			{projects.map(project => (
-				<a href={project.link} target="_blank" class="card project-card" data-tags={project.tags?.join(',')}>
-				<h3>{project.title}</h3>
-				<p>{project.desc}</p>
+        <div class="project-wrapper">
+          <a href={project.link} target="_blank" class="card project-card" data-tags={project.tags?.join(',')}>
+            <h3>{project.title}</h3>
+            <p>{project.desc}</p>
+            
+            <div class="project-tags-inline">
+              {project.tags?.map(tag => <small class="mini-tag">{tag}</small>)}
+            </div>
+          </a>
+          <a class="project-github" href={project.github} target="_blank"><span>Visit Github</span><FaGithub color="white" size="32px"/></a>
+        </div>
 				
-				<div class="project-tags-inline">
-					{project.tags?.map(tag => <small class="mini-tag">{tag}</small>)}
-				</div>
-				</a>
 			))}
 		</div>
 	</section>

@@ -196,6 +196,31 @@ a {
     border-radius: 4px;
   }
 
+  .project-wrapper {
+    position: relative;;
+  }
+  .project-github {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 32px;
+    align-items: center;
+    display: flex;
+  }
+  .project-github span {
+    width: 0px;
+    overflow: hidden;
+  }
+  .project-github:hover span {
+    background: rgba(255, 255, 255, 1);
+    height: 100%;
+    width: auto;
+    line-height: 32px;
+    padding: 0 12px;
+    color: black;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
  
 
 

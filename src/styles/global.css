@@ -212,16 +212,17 @@ a {
   .project-github span {
     width: 0px;
     overflow: hidden;
-  }
-  .project-github:hover span {
+    transition: ease all 0.2s;
     background: rgba(255, 255, 255, 1);
-    height: 100%;
-    width: auto;
-    line-height: 32px;
-    padding: 0 12px;
     color: black;
+    padding: 0px;
     border-top-left-radius: 60px;
     border-bottom-left-radius: 60px;
+    height: 100%;
+    line-height: 32px;
+  }
+  .project-github:hover span {
+    padding: 0 60px 0 12px;
   }
  
 

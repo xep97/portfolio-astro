@@ -5,7 +5,7 @@ import LangSwitcher from '../components/LangSwitcher.astro'; // Import here
 import translations from '../data/languages.json'; // Import data
 
 
-import { FaRocket, FaArrowDown, FaGithub } from "react-icons/fa";
+import { FaRocket, FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
 
 
 const t = translations.no; // Default to NO for SSR
@@ -71,7 +71,7 @@ const projects = [
               {project.tags?.map(tag => <small class="mini-tag">{tag}</small>)}
             </div>
           </a>
-          <a class="project-github" href={project.github} target="_blank"><span>Visit Github</span><FaGithub color="white" size="32px"/></a>
+          <a class="project-github" href={project.github} target="_blank"><span>Github</span><FaGithub color="white" size="32px"/></a>
         </div>
 				
 			))}
@@ -86,8 +86,8 @@ const projects = [
 	  </div>
 	  <h2 class="section-label" data-key="findAlso">{translations.no.findAlso}</h2>
 	  <div>
-		<a href="https://github.com/xep97" class="cta">Github</a>
-      	<a href="#comingsoon" class="cta">LinkedIn</a>
+		  <a href="https://github.com/xep97" class="cta"><FaGithub />Github</a>
+    	<a href="#comingsoon" class="cta"><FaLinkedin />LinkedIn</a>
 	  </div>
     </section>
 

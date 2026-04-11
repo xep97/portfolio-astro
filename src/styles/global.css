@@ -208,21 +208,29 @@ a {
     height: 32px;
     align-items: center;
     display: flex;
-  }
-  .project-github span {
-    width: 0px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 60px;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
     overflow: hidden;
     transition: ease all 0.2s;
-    background: rgba(255, 255, 255, 1);
+  }
+
+  .project-github span {
     color: black;
     padding: 0px;
-    border-top-left-radius: 60px;
-    border-bottom-left-radius: 60px;
     height: 100%;
     line-height: 32px;
+    width: 0px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .project-github:hover {
+    width: 120px;
   }
   .project-github:hover span {
-    padding: 0 60px 0 12px;
+    width: 88px;
   }
  
 

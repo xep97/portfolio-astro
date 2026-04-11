@@ -62,8 +62,8 @@ const projects = [
 		<h2 class="section-label" data-key="labelProjects">{translations.no.labelProjects}</h2>
 		<div class="project-grid">
 			{projects.map(project => (
-        <div class="project-wrapper">
-          <a href={project.link} target="_blank" class="card project-card" data-tags={project.tags?.join(',')}>
+        <div class="project-wrapper" data-tags={project.tags?.join(',')}>
+          <a href={project.link} target="_blank" class="card project-card">
             <h3>{project.title}</h3>
             <p>{project.desc}</p>
             
@@ -97,7 +97,7 @@ const projects = [
 
 <script>
   const buttons = document.querySelectorAll('.skill-tag');
-  const projects = document.querySelectorAll('.project-card');
+  const projects = document.querySelectorAll('.project-wrapper');
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {

@@ -1,0 +1,42 @@
+{
+  "no": {
+    "heroTitle": "Hei",
+    "heroEm": "verden",
+    "heroSub1": "Mitt navn er Egil og jeg lager nettsider",
+    "heroSub2": "Jeg er 28 år og bor på Sunnmøre i Norge",
+    "heroSub3": "Jeg har laget nettsider just for fun på fritiden i 15 år",
+    "heroCta": "Ta gjerne kontakt",
+    "labelMuch": "Har jobbet mye med",
+    "labelLittle": "Har også erfaring med",
+    "labelProjects": "Prosjekter",
+    "contactTitle": "Kontakt meg",
+    "contactText": "Du kan kontakte meg med kontaktskjemaet under, eller så kan du sende en epost til ",
+    "fullName": "Navn",
+    "emailAddress": "Epost",
+    "yourMessage": "Skriv meldingen her",
+    "sendMessage": "Send Melding",
+    "findAlso": "Du finner meg også her",
+    "badge": "Tilgjengelig for arbeid",
+    "footerText": "Copyright Egil 2026 - Takk for at du besøkte nettsiden min!"
+  },
+  "en": {
+    "heroTitle": "Hello",
+    "heroEm": "World",
+    "heroSub1": "My name is Egil and I make websites",
+    "heroSub2": "I am 28 years old and live in Sunnmøre, Norway",
+    "heroSub3": "I've been building websites for fun in my spare time for 15 years",
+    "heroCta": "Get in touch",
+    "labelMuch": "Experienced with",
+    "labelLittle": "Familiar with",
+    "labelProjects": "Projects",
+    "contactTitle": "Contact me",
+    "contactText": "Feel free to contact me by using the form below or by sending an email to ",
+    "fullName": "Name",
+    "emailAddress": "Email",
+    "yourMessage": "Your message",
+    "sendMessage": "Send Message",
+    "findAlso": "You can also find me here",
+    "badge": "Available for work",
+    "footerText": "Copyright Egil 2026 - Thanks for visiting my website!"
+  }
+}

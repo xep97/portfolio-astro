@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Contact from '../components/Contact.astro';
 import LangSwitcher from '../components/LangSwitcher.astro'; // Import here
 import translations from '../data/languages.json'; // Import data
+import Welcome from '../components/Welcome.astro';
 
 
 import { FaRocket, FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -33,16 +34,21 @@ const projects = [
   <main class="container">
     
     <section class="hero">
-      <span class="badge" data-key="badge">{translations.no.badge}</span>
-      <h1>
-        <span data-key="heroTitle">{translations.no.heroTitle}</span> 
-        <em data-key="heroEm">{translations.no.heroEm}</em>
-        <FaRocket color="white" size="50px" />
-      </h1>
-      <h3 data-key="heroSub1">{translations.no.heroSub1}</h3>
-      <h3 data-key="heroSub2">{translations.no.heroSub2}</h3>
-      <h3 data-key="heroSub3">{translations.no.heroSub3}</h3>
-      <a class="cta" href="#contact"><span data-key="heroCta">{translations.no.heroCta}</span><FaArrowDown color="black"/></a>
+      <header>
+        <Welcome />
+      </header>
+      <div>
+        <span class="badge" data-key="badge">{translations.no.badge}</span>
+        <h1>
+          <span data-key="heroTitle">{translations.no.heroTitle}</span> 
+          <em data-key="heroEm">{translations.no.heroEm}</em>
+        </h1>
+        <h3 data-key="heroSub1">{translations.no.heroSub1}</h3>
+        <h3 data-key="heroSub2">{translations.no.heroSub2}</h3>
+        <h3 data-key="heroSub3">{translations.no.heroSub3}</h3>
+        <a class="cta" href="#contact"><FaArrowDown color="black"/><span data-key="heroCta">{translations.no.heroCta}</span></a>
+      
+      </div>
     </section>
 
     <section class="skills">
@@ -87,8 +93,8 @@ const projects = [
 	  </div>
 	  <h2 class="section-label" data-key="findAlso">{translations.no.findAlso}</h2>
 	  <div>
-		  <a href="https://github.com/xep97" class="cta"><FaGithub />Github</a>
-    	<a href="#comingsoon" class="cta"><FaLinkedin />LinkedIn</a>
+		  <a href="https://github.com/xep97" class="cta"><FaGithub /><span>Github</span></a>
+    	<a href="https://www.linkedin.com/in/egil-pettersen-7aab41195/" class="cta"><FaLinkedin /><span>LinkedIn</span></a>
 	  </div>
     </section>
 

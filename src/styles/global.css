@@ -277,6 +277,14 @@ header {
     font-weight: 600;
     text-decoration: none;
     margin: 24px 8px;
+    align-content: center;
+    justify-content: center;
+    line-height: 16px;
+  }
+  .cta > span {
+    margin-left: 12px;
+    font-size: 16px;
+    line-height: 16px;
   }
 
 

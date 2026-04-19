@@ -15,8 +15,7 @@ const t = translations.no; // Default to NO for SSR
 //import { FaArrowDown } from "react-icons/fa";
 
 
-const skills = ["CSS", "HTML", "Javascript"];
-const second_skills = ["Astro", "Express.js", "Github", "Next.js", "Node.js", "PHP", "Python", "React", "Render", "Socket.io", "SQL", "Supabase", "Swift", "Typescript", "Vercel", "Vite", "Websockets"];
+const skills = ["HTML", "CSS", "Javascript", "Astro", "Express.js", "Github", "Next.js", "Node.js", "PHP", "Python", "React", "Render", "Socket.io", "SQL", "Supabase", "Swift", "Typescript", "Vercel", "Vite", "Websockets"];
 const projects = [
   { title: "100x100", descNO: "Samarbeid om å lage kunst i en 100x100 grid. Du kan endre en rute i minuttet.", descEN: "Collaborate on creating art in this 100x100 grid, every visitor can change on square per minute.", link: "https://one00x100.onrender.com/", github: "https://github.com/xep97/100x100", tags: ["HTML", "Javascript", "CSS", "Node.js", "Express.js", "Websockets", "Socket.io", "Github", "Render", "Supabase"] },
   { title: "Yztay", descNO: "Et litt annerledes yatzy spill.", descEN: "A yatzy game that's a little different.", link: "https://yztay.onrender.com/", github: "https://github.com/xep97/yztay", tags: ["HTML", "Javascript", "CSS", "Node.js", "Express.js", "Websockets", "Socket.io", "Github", "Render"] },
@@ -58,13 +57,6 @@ const projects = [
         	{skills.map(skill => <span class="card skill-tag">{skill}</span>)}
       	</div>
 	  </section>
-
-    <section class="skills">
-		<h2 class="section-label" data-key="labelLittle">{translations.no.labelLittle}</h2>
-      	<div class="skill-grid">
-        	{second_skills.map(second_skill => <span class="card skill-tag">{second_skill}</span>)}
-      	</div>
-    </section>
 
     <section class="projects">
 		<h2 class="section-label" data-key="labelProjects">{translations.no.labelProjects}</h2>

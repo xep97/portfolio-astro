@@ -66,13 +66,21 @@ const projects = [
         <div class="project-wrapper" data-tags={project.tags?.join(',')}>
           <a href={project.link} target="_blank" class="card project-card">
             <h3>{project.title}</h3>
-            <p>{project.descNO}</p>
+            
+            <p 
+              data-key="project-desc" 
+              data-no={project.descNO} 
+              data-en={project.descEN}
+            >
+              {project.descNO} </p>
             
             <div class="project-tags-inline">
               {project.tags?.map(tag => <small class="mini-tag">{tag}</small>)}
             </div>
           </a>
-          <a class="project-github" href={project.github} target="_blank"><span>Github</span><PiGithubLogoFill color="black" size="24px"/></a>
+          <a class="project-github" href={project.github} target="_blank">
+            <span>Github</span><PiGithubLogoFill color="black" size="24px"/>
+          </a>
         </div>
 				
 			))}

@@ -14,10 +14,19 @@ import translations from '../data/languages.json';
   const translatableElements = document.querySelectorAll('[data-key]');
 
   // Function to update the page text
+  // Inside the <script> tag of LangSwitcher.astro
+
   const updateLanguage = (lang) => {
     translatableElements.forEach(el => {
       const key = el.getAttribute('data-key');
-      if (translations[lang] && translations[lang][key]) {
+
+      // NEW LOGIC: Check if it's a project description
+      if (key === 'project-desc') {
+        const translation = el.getAttribute(`data-${lang}`);
+        if (translation) el.textContent = translation;
+      } 
+      // ORIGINAL LOGIC: Pull from languages.json
+      else if (translations[lang] && translations[lang][key]) {
         el.textContent = translations[lang][key];
       }
     });
@@ -27,9 +36,9 @@ import translations from '../data/languages.json';
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
     
-    // Optional: Save preference
     localStorage.setItem('preferred-lang', lang);
   };
+  
 
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {

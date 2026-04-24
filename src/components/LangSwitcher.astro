@@ -13,32 +13,27 @@ import translations from '../data/languages.json';
   const langButtons = document.querySelectorAll('.lang-btn');
   const translatableElements = document.querySelectorAll('[data-key]');
 
-  // Function to update the page text
-  // Inside the <script> tag of LangSwitcher.astro
-
   const updateLanguage = (lang) => {
     translatableElements.forEach(el => {
       const key = el.getAttribute('data-key');
 
-      // NEW LOGIC: Check if it's a project description
+      // Project description logic
       if (key === 'project-desc') {
         const translation = el.getAttribute(`data-${lang}`);
         if (translation) el.textContent = translation;
       } 
-      // ORIGINAL LOGIC: Pull from languages.json
+      // JSON translations logic
       else if (translations[lang] && translations[lang][key]) {
         el.textContent = translations[lang][key];
       }
     });
 
-    // Toggle button UI
     langButtons.forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
     
     localStorage.setItem('preferred-lang', lang);
   };
-  
 
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -47,9 +42,26 @@ import translations from '../data/languages.json';
     });
   });
 
-  // Load saved preference on start
-  const savedLang = localStorage.getItem('preferred-lang');
-  if (savedLang) updateLanguage(savedLang);
+  // --- AUTO-DETECTION LOGIC ---
+  const getInitialLanguage = () => {
+    // 1. Check local storage first
+    const savedLang = localStorage.getItem('preferred-lang');
+    if (savedLang) return savedLang;
+
+    // 2. Check browser language
+    // navigator.language returns things like 'en-US', 'en-GB', 'no-NB', 'nb-NO'
+    const browserLang = navigator.language.toLowerCase();
+    
+    if (browserLang.startsWith('en')) {
+      return 'en';
+    }
+
+    // 3. Default to Norwegian
+    return 'no';
+  };
+
+  // Apply the detected language on load
+  updateLanguage(getInitialLanguage());
 </script>
 
 <style>
